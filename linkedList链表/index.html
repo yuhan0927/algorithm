@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>链表</title>
+</head>
+<body>
+  <script>
+    // 封装链表类
+    function LinkedList() {
+      // 内部类：节点类
+      function Node(data) {
+        this.data = data
+        this.next = null
+      }
+      // 属性
+      this.head = null
+      this.length = 0 //记录列表的长度
+
+      // 追加方法
+      LinkedList.prototype.append = function (data) {
+        // 创建新的节点
+        var newNode = new Node(data)
+        // 判断是否添加的是第一个节点
+        if (this.length == 0) {  //是第一个节点
+          this.head = newNode
+        } else {                 //不是第一个节点
+          //找到第一个节点
+          var current = this.head
+          while(current.next) {
+            current = current.next
+          }
+
+          // 最后节点的next指向新的节点
+          current.next = newNode
+        }
+        this.length += 1
+      }
+
+    }
+  </script>
+</body>
+</html>
