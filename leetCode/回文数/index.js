@@ -10,9 +10,12 @@
 // 输入: 10
 // 输出: false
 // 解释: 从右向左读, 为 01 。因此它不是一个回文数。
+
+
 // var isPalindrome = function(x) {
 //     return x == x.toString().split('').reverse().join('')
 // };
+
 var isPalindrome = function (x) {
     let n = 0, y = x;
     //把x的每一位数倒过来组装成n
